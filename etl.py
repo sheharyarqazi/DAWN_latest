@@ -58,6 +58,7 @@ def extract_dawn():
 
     #fethcing the article links
     article_links = [link for link in links if "/news/" in link]
+    article_links = list(set(article_links))
     # print(article_links)
 
 
@@ -160,14 +161,16 @@ def extract():
     # bbc = extract_bbc()
     dawn = extract_dawn()
 
-    return "bbc", dawn
+    return bbc, dawn
 
 def load(bbc, dawn):
-    # dawn=list(set(dawn))
+
+
+    print(dawn)
     with open('dawn.json', 'w') as file:
             json.dump(dawn, file, indent=4)
-    # with open('bbc.json', 'w') as file:
-    #         json.dump(bbc, file, indent=4)
+    with open('bbc.json', 'w') as file:
+            json.dump(bbc, file, indent=4)
 
 
 
