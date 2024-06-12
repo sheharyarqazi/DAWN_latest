@@ -37,6 +37,7 @@ def preprocess_text(text):
 
 
 def extract_dawn():
+    articlesList=[]
     # URL of the LinkedIn job listings page
     url = "https://www.dawn.com"
 
@@ -83,6 +84,8 @@ def extract_dawn():
             content=preprocess_text(content)
             dic={}
             dic[heading]=content
+            articlesList.append(dic)
+
             # Append the article content to the list
             # article_contents.append(article_content)
         else:
@@ -91,9 +94,11 @@ def extract_dawn():
     # Print or process the extracted article contents
     # print(dic)
 
-    return dic
+    return articlesList
 
 def extract_bbc():
+
+    articlesList=[]
      # URL of the LinkedIn job listings page
     url = "https://www.bbc.com/"
 
@@ -136,6 +141,8 @@ def extract_bbc():
             content=preprocess_text(content)
             dic={}
             dic[heading]=content
+            articlesList.append(dic)
+
             # Append the article content to the list
             # article_contents.append(article_content)
         else:
@@ -144,22 +151,23 @@ def extract_bbc():
     # Print or process the extracted article contents
     # print(dic)
 
-    return dic
+    return articlesList
 
 
 
 
 def extract():
-    bbc = extract_bbc()
+    # bbc = extract_bbc()
     dawn = extract_dawn()
 
-    return bbc, dawn
+    return "bbc", dawn
 
 def load(bbc, dawn):
+    # dawn=list(set(dawn))
     with open('dawn.json', 'w') as file:
             json.dump(dawn, file, indent=4)
-    with open('bbc.json', 'w') as file:
-            json.dump(bbc, file, indent=4)
+    # with open('bbc.json', 'w') as file:
+    #         json.dump(bbc, file, indent=4)
 
 
 
