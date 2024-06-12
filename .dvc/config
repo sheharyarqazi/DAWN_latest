@@ -1,0 +1,4 @@
+[core]
+    remote = grive
+['remote "grive"']
+    url = gdrive://11nY5bMb2X2LZhybvG1bpxXzSldE96630

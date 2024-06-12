@@ -1,0 +1,5 @@
+outs:
+- md5: d800bf36013dc9b82cc44486ae9b463e
+  size: 5434
+  hash: md5
+  path: bbc.json

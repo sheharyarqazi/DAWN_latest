@@ -1,0 +1,5 @@
+outs:
+- md5: 29d8b6acdff1014a886cfd8476388a52
+  size: 1216
+  hash: md5
+  path: dawn.json
